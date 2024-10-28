@@ -17,19 +17,22 @@ import java.util.Scanner;
  * @author sivagamasrinivasan
  jn 22nd
  */
+// Class returns void, prints the values of the weekdays enums to output stream
 public class Days {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-         
-    Scanner in =new Scanner(System.in);
-    System.out.println("Enter the day number (one,two,three,four,five) in string");
-    String code = in.next();
-    Weekdays t= new Weekdays();
-    t.nameOfDay(code); 
-    }// TODO code application logic here
-    
-    
+        listNames(); 
+    }
+
+    public static void listNames() {
+        System.out.println("All the day names:");
+        
+        // Values of weekday enum
+        Weekdays[] daysArray = Weekdays.values();
+
+        // iterate through the enum constants
+        for (int i = 0; i < daysArray.length; i++) {
+            System.out.println(daysArray[i].getDayName());
+        }
+    }
 }
